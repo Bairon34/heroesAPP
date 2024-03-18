@@ -17,7 +17,6 @@ import { SearchsPageComponent } from './auth/pages/searchs-page/searchs-page.com
     AppComponent,
     LayoutPageComponent,
     HeroPageComponent,
-    ListPageComponent,
     NewPageComponent,
     SearchsPageComponent,
   ],

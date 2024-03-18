@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LayoutPageComponent } from '../auth/pages/layout-page/layout-page.component';
+import { LayoutPageComponent } from './pages/layout-page/layout-page.component';
 import { NewPageComponent } from '../auth/pages/new-page/new-page.component';
 import { SearchsPageComponent } from '../auth/pages/searchs-page/searchs-page.component';
 import { ListPageComponent } from '../auth/pages/list-page/list-page.component';
