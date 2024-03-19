@@ -9,6 +9,7 @@ import { HeroPageComponent } from './auth/pages/hero-page/hero-page.component';
 import { ListPageComponent } from './auth/pages/list-page/list-page.component';
 import { NewPageComponent } from './auth/pages/new-page/new-page.component';
 import { SearchsPageComponent } from './auth/pages/searchs-page/searchs-page.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -25,7 +26,7 @@ import { SearchsPageComponent } from './auth/pages/searchs-page/searchs-page.com
     BrowserAnimationsModule,
     AppRoutingModule,
     SharedModule,
-
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
