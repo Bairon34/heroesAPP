@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'hero-layout-page',
@@ -13,4 +15,23 @@ export class LayoutPageComponent {
     {label:'Añadir',icon:'add',url:'./new-hero'},
     {label:'Buscar',icon:'search',url:'./search'},
   ]
+
+  public  logoutApp():void{
+
+    Swal.fire({
+      title: "Esta seguro?",
+      text: "Quiere salir de la app!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Aceptar",
+      cancelButtonText:"Cancelar"
+    }).then((result) => {
+      if (result.isConfirmed) {
+
+      }
+    });
+
+  }
 }
