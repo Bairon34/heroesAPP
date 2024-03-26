@@ -1,20 +1,21 @@
 <h1>
-  Heroes / Agregar
-  heroe
+  Editar / Agregar
+  héroe
   <small>Superman</small>
 </h1>
 
 <mat-divider class="mb-2"></mat-divider>
 
-
 <div class="grid">
-  <div class="col-12 sm_col-6">
+
+  <div class="col-12 sm:col-6">
     <mat-card>
       <mat-card-content>
+
         <div class="grid">
 
           <mat-form-field class="col-12 sm:col-6">
-            <mat-label>Sueper heroe</mat-label>
+            <mat-label>Super héroe</mat-label>
             <input
               matInput
               type="text"
@@ -31,7 +32,8 @@
             />
           </mat-form-field>
 
-          <mat-form-field class="col-12 sm:col-6">
+
+          <mat-form-field class="col-12">
             <mat-label>Primera aparición</mat-label>
             <input
               matInput
@@ -40,8 +42,8 @@
             />
           </mat-form-field>
 
-          <mat-form-field class="col-12 sm:col-6">
-            <mat-label>Personaje</mat-label>
+          <mat-form-field class="col-12">
+            <mat-label>Personajes</mat-label>
             <input
               matInput
               type="text"
@@ -49,25 +51,33 @@
             />
           </mat-form-field>
 
-          <mat-form-field class="col-12 sm:col-6">
-            <mat-label>Crador</mat-label>
-            <mat-select required>
-             <mat-option
-                [value]="publicsher.id"
-                *ngFor=" let publicsher of optionCraatorPerson"
-              >
-              {{publicsher.desc}}
-            </mat-option>
+          <mat-form-field class="col-12">
+            <mat-label>Creador</mat-label>
+            <mat-select required="">
+              <mat-option *ngFor="let publisher of optionCraatorPerson"
+                [value]="publisher.id">
+                {{ publisher.desc }}
+              </mat-option>
             </mat-select>
           </mat-form-field>
-
         </div>
 
         <div class="flex justify-content-between">
-          <button mat-flat-button color="warn"> <mat-icon>delete</mat-icon> Borrar</button>
-          <button mat-flat-button color="primary"> <mat-icon>save</mat-icon> Guardar</button>
-        </div>
+          <button
+            mat-flat-button
+            color="warn"
+          >
+            Borrar
+          </button>
 
+          <button
+            mat-flat-button
+            color="primary"
+          >
+            <mat-icon>save</mat-icon>
+            Guardar
+          </button>
+        </div>
 
       </mat-card-content>
     </mat-card>
@@ -76,8 +86,9 @@
   <div class="col-12 sm:col-6">
 
     <mat-card>
-      <img [src]="" alt="imagen del herue" mat-card-image>
+      <img src="" alt="imagen del héroe" mat-card-image>
     </mat-card>
 
   </div>
 </div>
+
