@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import Swal from 'sweetalert2';
+import { AlertService } from '../../components/alerts/alertService.service';
+
 
 
 @Component({
@@ -10,28 +12,15 @@ import Swal from 'sweetalert2';
 })
 export class LayoutPageComponent {
 
+  constructor(private alert:AlertService){}
+
   public sidebarItems= [
     {label:'Listado',icon:'label',url:'./list'},
     {label:'Añadir',icon:'add',url:'./new-hero'},
-    {label:'Buscar',icon:'search',url:'./search'},
+    {label:'Buscar',icon:'search',url:'./searchs'},
   ]
 
   public  logoutApp():void{
-
-    Swal.fire({
-      title: "Esta seguro?",
-      text: "Quiere salir de la app!",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Aceptar",
-      cancelButtonText:"Cancelar"
-    }).then((result) => {
-      if (result.isConfirmed) {
-
-      }
-    });
-
+    this.alert.alertAtention("Alert","prueba alert")
   }
 }
