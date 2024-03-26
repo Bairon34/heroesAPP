@@ -9,6 +9,7 @@ import { HeroImagePipe } from './pipes/hero-image.pipe';
 import { HeroPageComponent } from './pages/hero-page/hero-page.component';
 import { SearchsPageComponent } from './pages/searchs-page/searchs-page.component';
 import { AlertService } from './components/alerts/alertService.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { AlertService } from './components/alerts/alertService.service';
   ],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     HeroesRoutingModule,
     MaterialModule
   ],

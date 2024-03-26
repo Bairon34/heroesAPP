@@ -6,6 +6,23 @@
     <input
       type="text"
       matInput
+      [formControl] = "searchsInput"
+      (input)="serachsHero()"
+      [matAutocomplete]="auto"
     >
+
+    <mat-autocomplete #auto="matAutocomplete" (optionSelected)="onSelectedOption($event)">
+        <mat-option *ngFor="let hero of heroes" [value]="hero">
+          {{hero.superhero}}
+        </mat-option>
+
+        <mat-option
+          *ngIf="heroes.length ===0   && searchsInput.value && searchsInput.value.length > 0"
+          value=""
+        >
+          No se encontro con el termino digitado {{searchsInput.value}}
+        </mat-option>
+    </mat-autocomplete>
   </mat-form-field>
+  {{selectedHero |json}}
 </div>
