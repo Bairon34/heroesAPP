@@ -1,7 +1,7 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "usuario": "John Doe",
       "email": "john.due@gmail.com"
     }
@@ -12,7 +12,7 @@
       "superhero": "Batman",
       "publisher": "DC Comics",
       "alter_ego": "Bruce Wayne",
-      "first_appearance": "Detective Comics #27",
+      "first_appearance": "Mi rimer commit",
       "characters": "Bruce Wayne"
     },
     {
@@ -166,6 +166,42 @@
       "alter_ego": "Norrin Radd",
       "first_appearance": "The Fantastic Four #48",
       "characters": "Norrin Radd"
+    },
+    {
+      "id": "dc-goku",
+      "superhero": "goku",
+      "publisher": "DC Comics",
+      "alter_ego": "goku",
+      "first_appearance": "1993",
+      "characters": "dragon ball z",
+      "alt_img": "https://i.pinimg.com/originals/8b/ba/73/8bba73567972ab788c36eae11af4fb51.jpg"
+    },
+    {
+      "id": "",
+      "superhero": "gohan",
+      "publisher": "Marvel Comics",
+      "alter_ego": "son",
+      "first_appearance": "1993 tv",
+      "characters": "dragon ball z",
+      "alt_img": "https://i.pinimg.com/736x/6d/5a/91/6d5a9133a5accd3a1d954a99b4ff4c77.jpg"
+    },
+    {
+      "id": "a",
+      "superhero": "pan",
+      "publisher": "Marvel Comics",
+      "alter_ego": "son",
+      "first_appearance": "1993",
+      "characters": "drangon ball",
+      "alt_img": "https://p7.hiclipart.com/preview/420/992/1007/pan-videl-mr-satan-goku-vegeta-goku-thumbnail.jpg"
+    },
+    {
+      "id": "gotens",
+      "superhero": "gotens",
+      "publisher": "DC Comics",
+      "alter_ego": "son2",
+      "first_appearance": "1993",
+      "characters": "dragon ball",
+      "alt_img": "https://i.pinimg.com/736x/af/d6/94/afd694fa08182e9a8f13ef8ea0778d89.jpg"
     }
   ]
 }
