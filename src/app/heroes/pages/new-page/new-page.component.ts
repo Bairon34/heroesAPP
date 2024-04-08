@@ -4,6 +4,10 @@ import { Hero, Publisher } from '../../interfaces/heroes.interface';
 import { HeroesService } from '../../services/heroes.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { switchMap } from 'rxjs';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatDialog, MatDialogActions } from '@angular/material/dialog';
+import { AlertService } from '../../components/alerts/alertService.service';
+import { ConfirmDialogComponent } from '../../components/confirm-dialog/confirm-dialog.component';
 
 @Component({
   selector: 'app-new-page',
@@ -35,7 +39,9 @@ export class NewPageComponent implements OnInit {
   constructor(
     private heroesService: HeroesService,
     private activateRoute : ActivatedRoute,
-    private router : Router
+    private router : Router,
+    private snackbar: MatSnackBar,
+    private dialog : MatDialog
   ){}
 
   get currentHero(): Hero{
@@ -59,37 +65,59 @@ export class NewPageComponent implements OnInit {
     });
   }
 
-
-
-
-
   onSubmit():void{
     console.log({
       formIsValid :  this.heroForm.valid,
       value: this.heroForm.value
     })
 
-
     if (this.heroForm.invalid) return
 
     if(this.currentHero.id){
-      this.heroesService.updateHero(this.currentHero)
-      .subscribe(hero => {
-        //TODO : mostrar snackbar
-      });
+      this.eiditSuperHero()
       return
     }
 
+    this.addSuperHero()
+  }
+
+  showSnackbar(message:string):void{
+    this.snackbar.open(message,'done',{
+      duration :2500,
+
+    })
+  }
+
+  addSuperHero(){
     this.currentHero.id =this. currentHero.superhero
     this.heroesService.addHero(this.currentHero)
     .subscribe(hero => {
-      //TODO : mostrar snacbard y navegar /hero/edit/hero
+      this.router.navigate(['/heroes/edit', hero.id])
+      this.showSnackbar(`${hero.superhero} registered!`)
     });
 
   }
 
+  eiditSuperHero(){
+    this.heroesService.updateHero(this.currentHero)
+      .subscribe(hero => {
+        this.showSnackbar(`${hero.superhero} update!`)
+      });
+  }
+
+  onDeleteHero(){
+    if(this.currentHero.id) throw Error('Hero id is requird en aplication')
+
+    const dialogRef =  this.dialog.open(ConfirmDialogComponent,{
+      data: this.heroForm.value
+    })
+
+    dialogRef.afterClosed().subscribe( result => {
+      console.log('the dialog was closed ')
+      console.log({result})
+    })
+  }
 }
-function getRandomInt(arg0: number): string {
-  throw new Error('Function not implemented.');
-}
+
+
 

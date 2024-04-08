@@ -1,5 +1,7 @@
 import { Injectable } from "@angular/core";
+import { Observable } from "rxjs";
 import Swal from "sweetalert2";
+import { SearchResponse } from "../../interfaces/popupressponse.interface";
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +9,7 @@ import Swal from "sweetalert2";
 
 export class AlertService {
 
-  public alertAtention(titleAlert:string,textAlert:string): void{
+  public alertAtention(titleAlert:string,textAlert:string){
     Swal.fire({
       title: titleAlert,
       text: textAlert,
@@ -18,9 +20,7 @@ export class AlertService {
       confirmButtonText: "Aceptar",
       cancelButtonText:"Cancelar"
     }).then((result) => {
-      if (result.isConfirmed) {
-        console.log("click acaeptar");
-      }
+      return result
     });
   }
 
