@@ -168,15 +168,6 @@
       "characters": "Norrin Radd"
     },
     {
-      "id": "dc-goku",
-      "superhero": "goku",
-      "publisher": "DC Comics",
-      "alter_ego": "goku",
-      "first_appearance": "1993",
-      "characters": "dragon ball z",
-      "alt_img": "https://i.pinimg.com/originals/8b/ba/73/8bba73567972ab788c36eae11af4fb51.jpg"
-    },
-    {
       "id": "gohan",
       "superhero": "gohan",
       "publisher": "Marvel Comics",
@@ -211,15 +202,6 @@
       "first_appearance": "1993",
       "characters": "dragon ball",
       "alt_img": "https://i.pinimg.com/474x/a0/0c/fd/a00cfd76f9d29471d3c8427bce58eb02.jpg"
-    },
-    {
-      "id": "vegeta",
-      "superhero": "vegeta",
-      "publisher": "DC Comics",
-      "alter_ego": "son 8",
-      "first_appearance": "1993",
-      "characters": "drangon ball",
-      "alt_img": "https://i.pinimg.com/474x/1c/5b/96/1c5b96980da81bf74f21aa8c5bd7c651.jpg"
     }
   ]
 }
