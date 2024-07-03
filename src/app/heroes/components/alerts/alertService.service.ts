@@ -1,7 +1,9 @@
-import { Injectable } from "@angular/core";
-import { Observable } from "rxjs";
+import { User } from 'src/app/auth/interfaces/user.interfaace';
+import { Injectable, Pipe } from '@angular/core';
+import { Observable, of, tap } from "rxjs";
 import Swal from "sweetalert2";
-import { SearchResponse } from "../../interfaces/popupressponse.interface";
+import { PopupResponse } from "../../interfaces/popupressponse.interface";
+
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +11,10 @@ import { SearchResponse } from "../../interfaces/popupressponse.interface";
 
 export class AlertService {
 
-  public alertAtention(titleAlert:string,textAlert:string){
+  private popupResponse?: PopupResponse
+
+  alertAtention({ titleAlert, textAlert }: { titleAlert: string; textAlert: string; }):Observable<boolean>  {
+    return of (false)
     Swal.fire({
       title: titleAlert,
       text: textAlert,
@@ -20,7 +25,7 @@ export class AlertService {
       confirmButtonText: "Aceptar",
       cancelButtonText:"Cancelar"
     }).then((result) => {
-      return result
+      return of (result.value)
     });
   }
 

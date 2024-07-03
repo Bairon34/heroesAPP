@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import Swal from 'sweetalert2';
 import { AlertService } from '../../components/alerts/alertService.service';
+import { AuthService } from '../../../auth/services/auth/auth.service';
+import { User } from 'src/app/auth/interfaces/user.interfaace';
+import { Router } from '@angular/router';
 
 
 
@@ -10,9 +13,19 @@ import { AlertService } from '../../components/alerts/alertService.service';
   styles: [
   ]
 })
+
+
 export class LayoutPageComponent {
 
-  constructor(private alert:AlertService){}
+  constructor(
+    private alert:AlertService,
+    private authService: AuthService,
+    private router : Router
+    ){}
+
+  get user():User|undefined{
+    return this.authService.currentUser
+  }
 
   public sidebarItems= [
     {label:'Listado',icon:'label',url:'./list'},
@@ -21,6 +34,8 @@ export class LayoutPageComponent {
   ]
 
   public  logoutApp():void{
-    this.alert.alertAtention("Alert","prueba alert")
+   // this.alert.alertAtention("Alert","prueba alert")
+   this.authService.logout()
+   this.router.navigate(['/auth/login'])
   }
 }
