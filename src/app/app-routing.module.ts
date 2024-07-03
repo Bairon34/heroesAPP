@@ -1,14 +1,16 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes, CanMatch } from '@angular/router';
-import { LayoutPageComponent } from './auth/pages/layout-page/layout-page.component';
+import { RouterModule, Routes} from '@angular/router';
 import { Error404PageComponent } from './shared/page/error404-page/error404-page.component';
 import { AuthGuard } from './auth/guard/auth.guard';
+import { LogoutGuard } from './auth/guard/logout.guard';
 
 
 const routes: Routes = [
   {
     path:'auth',
     loadChildren:() =>import('./auth/auth.module').then(m => m.AuthModule),
+    canActivate: [LogoutGuard],
+    canMatch: [LogoutGuard]
   },
   {
     path:'heroes',
